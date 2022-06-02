@@ -21,8 +21,10 @@ public class Bashboard extends javax.swing.JFrame {
         initComponents();
          this.setExtendedState(MAXIMIZED_BOTH);
          
-         Becados b= new Becados();
-         Showpanel(b);
+         Pinicio pa= new Pinicio();
+         Showpanel(pa);
+         
+       
     }
  
     /**
@@ -222,7 +224,7 @@ public class Bashboard extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 800));
 
-        contenedor.setBackground(new java.awt.Color(255, 204, 102));
+        contenedor.setBackground(new java.awt.Color(255, 255, 255));
         contenedor.setPreferredSize(new java.awt.Dimension(1200, 800));
         contenedor.setLayout(new java.awt.CardLayout());
         jPanel1.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1200, 800));
