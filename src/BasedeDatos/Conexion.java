@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class Conexion {
     
     
-    static String bd = "imagenes";
+    static String bd = "becas";
     static String login = "root";
     static String password = "";
     static String url = "jdbc:mysql://localhost/"+bd;
