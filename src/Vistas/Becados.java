@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Vistas;
+import Clases.Programa;
+import Clases.Servicio;
+import Metodos.Mprograma;
+import Metodos.Mservicio;
 
 /**
  *
@@ -13,8 +17,15 @@ public class Becados extends javax.swing.JPanel {
     /**
      * Creates new form Becados
      */
+    Mprograma pro = new Mprograma();
+    Programa prog ;
+    Mservicio ser = new Mservicio();
+    Servicio servi;
     public Becados() {
         initComponents();
+        pro.consulta(JCBprograma);
+        ser.consulta(JCBservicio);
+        
     }
 
     /**
@@ -50,7 +61,6 @@ public class Becados extends javax.swing.JPanel {
         jTextField19 = new javax.swing.JTextField();
         jTextField20 = new javax.swing.JTextField();
         jTextField21 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
         jTextField31 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -92,10 +102,11 @@ public class Becados extends javax.swing.JPanel {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        JCBprograma = new javax.swing.JComboBox<>();
+        JCBservicio = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1200, 800));
@@ -144,19 +155,27 @@ public class Becados extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 50));
 
-        TFnombre.setText("Luis Angel Hernesto");
+        TFnombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         add(TFnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 260, -1));
+
+        jTextField1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 180, -1));
 
+        jTextField2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 150, -1));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 140, -1));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 180, -1));
+
+        jTextField3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 200, -1));
+
+        jTextField4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 400, 320, 80));
 
+        jTextField5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
@@ -164,6 +183,7 @@ public class Becados extends javax.swing.JPanel {
         });
         add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 190, -1));
 
+        jTextField8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField8ActionPerformed(evt);
@@ -171,6 +191,7 @@ public class Becados extends javax.swing.JPanel {
         });
         add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 250, -1));
 
+        jTextField9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField9ActionPerformed(evt);
@@ -178,13 +199,15 @@ public class Becados extends javax.swing.JPanel {
         });
         add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 190, -1));
 
+        jTextField10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
             }
         });
-        add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 140, -1));
+        add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 240, -1));
 
+        jTextField11.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField11ActionPerformed(evt);
@@ -192,6 +215,7 @@ public class Becados extends javax.swing.JPanel {
         });
         add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 240, -1));
 
+        jTextField12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField12ActionPerformed(evt);
@@ -199,143 +223,194 @@ public class Becados extends javax.swing.JPanel {
         });
         add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 250, -1));
 
+        jTextField13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField13ActionPerformed(evt);
             }
         });
         add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 260, -1));
-        add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 290, 60));
-        add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 170, -1));
 
+        jTextField14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 290, 60));
+
+        jTextField15.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 200, -1));
+
+        jTextField17.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField17ActionPerformed(evt);
             }
         });
         add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 190, -1));
+
+        jTextField18.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 260, -1));
-        add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 250, -1));
-        add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 250, -1));
+
+        jTextField19.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 260, -1));
+
+        jTextField20.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 260, -1));
+
+        jTextField21.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 370, 70));
-        add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 160, -1));
+
+        jTextField31.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 330, 60));
 
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setText("Nombre");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, -1));
 
-        jLabel2.setText("Apellodo Paterno");
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel2.setText("Apellodo paterno");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 120, -1));
 
-        jLabel3.setText("Apellido Materno");
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel3.setText("Apellido materno");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
-        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 150, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, 150, -1));
 
-        jLabel4.setText("Año de nacimiento");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel4.setText("Fecha de nacimiento");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 80, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel5.setText("Lugar de nacimiento");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
 
-        jLabel6.setText("Dirección Permanente");
+        jLabel6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel6.setText("Dirección permanente");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        jLabel7.setText("Dirección Actual");
+        jLabel7.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel7.setText("Dirección actual");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
 
         jLabel8.setText("foto");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 60, 150, 170));
 
-        jLabel9.setText("Telefono celular");
+        jLabel9.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel9.setText("Teléfono celular");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel10.setText("Correo");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel11.setText("Nombre del padre");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, 20));
 
+        jLabel12.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel12.setText("Nombre de la madre");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel13.setText("Lugar que ocupa en la familia");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, -1, -1));
 
+        jLabel14.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel14.setText("Trabajo actual");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, -1, -1));
 
-        jLabel15.setText("Año de gradución bachillerato");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, -1, -1));
+        jLabel15.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel15.setText("Año de gradución  de villa (bachillerato)");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 320, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel16.setText("Año de entrada a villa");
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
 
+        jLabel17.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel17.setText("Año de graduacion de villa (Secundaria)");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, -1, -1));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, -1));
 
-        jLabel18.setText("Numero de Hermanos Totales");
+        jLabel18.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel18.setText("Numero de hermanos totales");
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
-        add(jYearChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, 170, -1));
-        add(jYearChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 220, -1));
-        add(jYearChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 340, 150, -1));
+        add(jYearChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, 200, -1));
+        add(jYearChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 240, -1));
+        add(jYearChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 340, 250, -1));
 
+        jLabel19.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel19.setText("Facebook");
         add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
+        jLabel20.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel20.setText("Instagram");
         add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, -1, -1));
 
+        jLabel21.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel21.setText("Otra red social");
         add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, -1, -1));
 
+        jLabel22.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel22.setText("Carrera");
         add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, -1, -1));
 
+        jLabel23.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel23.setText("Universidad");
-        add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, -1, -1));
+        add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
 
+        jLabel24.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel24.setText("Dirección de la universidad");
         add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 380, -1, -1));
 
-        jLabel25.setText("Duración en años");
-        add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 430, -1, -1));
+        jLabel25.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel25.setText("Duración en años de la carrera");
+        add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, -1));
 
-        jLabel26.setText("Sistema ");
-        add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, -1, -1));
+        jLabel26.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel26.setText("Sistema de estudio ");
+        add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
+        jLabel27.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel27.setText("Año de inicio en la beca");
-        add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, -1, -1));
+        add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, -1, -1));
         add(jYearChooser4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 540, 140, -1));
 
+        jLabel28.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel28.setText("Año de graduación");
-        add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 520, -1, -1));
+        add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, -1, -1));
         add(jYearChooser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, 130, -1));
         add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 160, -1));
         add(jSpinField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, 240, -1));
 
+        jLabel29.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel29.setText("Fecha de baja en la beca");
         add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 520, -1, -1));
 
+        jLabel30.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel30.setText("Logros recibidos");
-        add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 570, -1, -1));
+        add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, -1, -1));
 
+        jLabel31.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel31.setText("Estatus");
         add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 520, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Graduado", "Baja" }));
         add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 540, 150, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 590, 220, -1));
+        add(JCBprograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 590, 220, -1));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 590, 230, -1));
+        JCBservicio.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        add(JCBservicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 590, 230, -1));
 
-        jLabel32.setText("Programa");
+        jLabel32.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel32.setText("Programa de beca");
         add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 570, -1, -1));
 
-        jLabel33.setText("Servicio");
+        jLabel33.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel33.setText("Sitio del servicio");
         add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 570, -1, -1));
+
+        jComboBox3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bimestral", "Trimestral", "Cuatrimestral", "Semestral" }));
+        add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -386,12 +461,13 @@ public class Becados extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBeditar;
     private javax.swing.JButton JBguardar;
+    private javax.swing.JComboBox<String> JCBprograma;
+    private javax.swing.JComboBox<String> JCBservicio;
     private javax.swing.JTextField TFnombre;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
@@ -442,7 +518,6 @@ public class Becados extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField4;

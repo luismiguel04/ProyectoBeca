@@ -3,43 +3,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Metodos;
+
 import BasedeDatos.Conexion;
-import Clases.Programa;
-import java.sql.Connection;
+import Clases.Servicio;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 
 /**
  *
  * @author Mayra Garrido
  */
-public class Mprograma {
+public class Mservicio {
+    
+    
     private Conexion cone;
-    private Programa Programa;
+    private Servicio Servicio;
     private Conexion con;
 
     
-    public Mprograma(){
+    public Mservicio(){
     cone = new Conexion();
-    Programa = new Programa();
+    Servicio = new Servicio();
     
 }
     
-   
-   
-    
-    public void insertar(Programa pro){
+        public void insertar(Servicio ser){
         Conexion conec = new Conexion();
-        String sql = "INSERT INTO Programa (id_Programa, nombre)\n" +
+        String sql = "INSERT INTO Servicio (Id_Servicio, Nombre)\n" +
         "VALUES (NULL,?);";
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setString(1, pro.getNombre());
+            ps.setString(1, ser.getNombre());
           
             ps.executeUpdate();
         }catch(SQLException ex){
@@ -55,15 +54,14 @@ public class Mprograma {
         
    
     }
-    
-    public void consulta(JComboBox JCBprograma){
+public void consulta(JComboBox JCBservicio){
 
 //Creamos objeto tipo Connection   
 Conexion conec = new Conexion();    
 PreparedStatement ps = null;
 ResultSet result = null;
 //Creamos la Consulta SQL
-String sql = "SELECT nombre FROM programa";
+String sql = "SELECT *  FROM Servicio ";
 //Establecemos bloque try-catch-finally
 try {
        
@@ -75,12 +73,12 @@ try {
    result = ps.executeQuery();
    
    //LLenamos nuestro ComboBox
-   JCBprograma.addItem("Seleccione una opción");
+   JCBservicio.addItem("Seleccione una opción");
    
    
    while(result.next()){
    
-       JCBprograma.addItem(result.getString("Nombre"));
+       JCBservicio.addItem(result.getString("Nombre"));
    }
    
     
@@ -96,30 +94,5 @@ try {
 } 
 
 } 
-    
-    public void Modificar(Programa prog){
-        Conexion conec = new Conexion();
-        String sql = "UPDATE Programa SET nombre = ?\n" +
-"WHERE Id_programa = ?;";
-        PreparedStatement ps = null;
-        try{
-            ps = conec.getConnection().prepareStatement(sql);
-            ps.setString(1, prog.getNombre());
-            ps.setInt(4, prog.getId_programa());
-            ps.executeUpdate();
-        }catch(SQLException ex){
-            System.out.println(ex.getMessage());
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{
-                ps.close();
-                conec.desconectar();
-            }catch(Exception ex){}
-        }
-    }
-
-    
-    
     
 }
