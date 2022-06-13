@@ -7,6 +7,17 @@ import Clases.Programa;
 import Clases.Servicio;
 import Metodos.Mprograma;
 import Metodos.Mservicio;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -40,7 +51,7 @@ public class Becados extends javax.swing.JPanel {
         JBguardar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        JCBnombre = new javax.swing.JComboBox<>();
         JBeditar = new javax.swing.JButton();
         TFnombre = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
@@ -107,6 +118,8 @@ public class Becados extends javax.swing.JPanel {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
+        JTruta = new javax.swing.JTextField();
+        JBsubirfoto = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1200, 800));
@@ -137,7 +150,7 @@ public class Becados extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JCBnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(JBeditar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -148,7 +161,7 @@ public class Becados extends javax.swing.JPanel {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JCBnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBeditar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -258,6 +271,9 @@ public class Becados extends javax.swing.JPanel {
         add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 370, 70));
 
         jTextField31.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextField31.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextField31.setDoubleBuffered(true);
+        jTextField31.setDragEnabled(true);
         add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 330, 60));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -290,7 +306,7 @@ public class Becados extends javax.swing.JPanel {
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
 
         jLabel8.setText("foto");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 60, 150, 170));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, 120, 140));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel9.setText("Teléfono celular");
@@ -411,6 +427,15 @@ public class Becados extends javax.swing.JPanel {
         jComboBox3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bimestral", "Trimestral", "Cuatrimestral", "Semestral" }));
         add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 150, -1));
+        add(JTruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 200, 200, -1));
+
+        JBsubirfoto.setText("Subir foto");
+        JBsubirfoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBsubirfotoActionPerformed(evt);
+            }
+        });
+        add(JBsubirfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 110, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -457,15 +482,75 @@ public class Becados extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
 
+    private void JBsubirfotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBsubirfotoActionPerformed
+        // TODO add your handling code here:
+       String carp="Documetos";
+        File r = new File(carp);
+          
+                if(r.mkdir()){
+                    System.out.println(r.getAbsolutePath());
+                    System.out.println("carpeta creada");
+                    
+                }else{
+                    System.out.println("carpeta no creada ya existe");
+                }
+        
+        JFileChooser j = new JFileChooser();
+        FileNameExtensionFilter fil = new FileNameExtensionFilter("JPG, PNG % JPNG","jpg","png","jpng");
+        j.setFileFilter(fil);
+        
+        int s = j.showOpenDialog(this);
+        if(s == JFileChooser.APPROVE_OPTION){
+            String ruta = j.getSelectedFile().getAbsolutePath();
+            
+            
+            File archivo = new File(ruta);
+            System.out.println(archivo.getAbsolutePath());
+            archivo.renameTo(new File (r.getAbsolutePath()+File.separatorChar+archivo.getName()));
+            System.out.println(r.getAbsolutePath()+archivo.getName());
+            JTruta.setText(r.getAbsolutePath()+archivo.getName());
+            
+            
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_JBsubirfotoActionPerformed
+public boolean moveFile(String fromFile, String toFile) {
+    File origin = new File(fromFile);
+    File destination = new File(toFile);
+    if (origin.exists()) {
+        try {
+            InputStream in = new FileInputStream(origin);
+            OutputStream out = new FileOutputStream(destination);
+            byte[] buf = new byte[1024];
+            int len;
+            while ((len = in.read(buf)) > 0) {
+                out.write(buf, 0, len);
+            }
+            in.close();
+            out.close();
+            return origin.delete();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBeditar;
     private javax.swing.JButton JBguardar;
+    private javax.swing.JButton JBsubirfoto;
+    private javax.swing.JComboBox<String> JCBnombre;
     private javax.swing.JComboBox<String> JCBprograma;
     private javax.swing.JComboBox<String> JCBservicio;
+    private javax.swing.JTextField JTruta;
     private javax.swing.JTextField TFnombre;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
